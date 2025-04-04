@@ -7,7 +7,7 @@ def target_feature_stacks(start_group, end_group, target_splits_path, fSCA_path,
     
     # loop through the years and feature data
     for group in groups:
-        print(f"Processing y{group}")
+        print(f"Processing {group}")
         targetSplits = target_splits_path
         fSCAWorkspace = fSCA_path
         for sample in os.listdir(targetSplits):
