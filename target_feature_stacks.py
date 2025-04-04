@@ -1,5 +1,5 @@
 # split up the features and arrarys 
-def target_feature_stacks(start_group, end_group, target_splits_path, fSCA_path, vegetation_path, phv_path, extension_filter, desired_shape, debug_output_folder, num_of_channels):
+def target_feature_stacks(start_group, end_group, target_splits_path, fSCA_path, vegetation_path, veg_year, phv_path, extension_filter, desired_shape, debug_output_folder, num_of_channels):
 ## create empty arrays
     groups = list(range(start_group, (int(end_group) + 1))
     featureArray = []
