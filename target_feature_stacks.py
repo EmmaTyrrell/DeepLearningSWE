@@ -1,13 +1,13 @@
 # split up the features and arrarys 
-def target_feature_stacks(start_year, end_year, target_splits_path, fSCA_path, vegetation_path, phv_path, extension_filter, desired_shape, debug_output_folder, num_of_channels):
+def target_feature_stacks(start_group, end_group, target_splits_path, fSCA_path, vegetation_path, phv_path, extension_filter, desired_shape, debug_output_folder, num_of_channels):
 ## create empty arrays
-    years = list(range(start_year,end_year))
+    groups = list(range(start_group, (int(end_group) + 1))
     featureArray = []
     targetArray = []
     
     # loop through the years and feature data
-    for year in years:
-        print(f"Processing year {year}")
+    for group in groups:
+        print(f"Processing y{group}")
         targetSplits = target_splits_path
         fSCAWorkspace = fSCA_path
         for sample in os.listdir(targetSplits):
@@ -63,7 +63,7 @@ def target_feature_stacks(start_year, end_year, target_splits_path, fSCA_path, v
                 # get the vegetation array
                 for tree in os.listdir(vegetation_path):
                     if tree.endswith(extension_filter):
-                        if tree.startswith(f"{year}"):
+                        if tree.startswith(f"{veg_year}"):
                             featureName.append(f"{tree[:-4]}")
                             tree_norm = read_aligned_raster(
                             src_path=tree_workspace + tree,
